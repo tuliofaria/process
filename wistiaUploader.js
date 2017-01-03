@@ -29,6 +29,11 @@ wistiaUploader.controller('WistiaUploaderCtrl', ['$scope', '$element', '$attrs',
                     });
                 }
             },
+            fail: function(e){
+                $scope.$apply(function(){
+                    $scope.currentState = 'error';
+                });
+            },
             progressall: function (e, data) {
                 var progress = parseInt(data.loaded / data.total * 100, 10);
                 $scope.$apply(function(){
@@ -43,7 +48,5 @@ wistiaUploader.component('wistiaUploader', {
   templateUrl: 'wistiaUploader.html',
   controller: 'WistiaUploaderCtrl',
   bindings: {
-    destination: '<',
-    apiPassword: '<'
   }
 });

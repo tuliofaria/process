@@ -1,5 +1,6 @@
-<div ng-show="currentState==='selectFile'">
+<div ng-show="currentState==='selectFile' || currentState==='error'">
   <h2>Upload a video</h2>
+  <p ng-show="currentState==='error'">Something went wrong. Try to upload again.</p>
     <span class="btn btn-success fileinput-button">
         <i class="glyphicon glyphicon-plus"></i>
         <span>Select file...</span>
