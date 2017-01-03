@@ -1,0 +1,19 @@
+<div ng-show="currentState==='selectFile'">
+  <h2>Upload a video</h2>
+    <span class="btn btn-success fileinput-button">
+        <i class="glyphicon glyphicon-plus"></i>
+        <span>Select file...</span>
+        <input class="fileupload" type="file" name="file">
+    </span>
+    <!-- The container for the uploaded files -->
+    <div id="files" class="files"></div>
+</div>
+<div ng-show="currentState==='uploading'">
+  <h2>Uploading video...</h2>
+  <div class="progress">
+      <div class="progress-bar progress-bar-success" style="width: {{progress}}%"></div>
+  </div>
+</div>
+<div ng-show="currentState==='done'">
+  <div class="wistia_embed wistia_async_{{hashedId}}" style="width:640px;height:360px;">&nbsp;</div>
+</div>
